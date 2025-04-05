@@ -1,15 +1,14 @@
-def my_decorator(func):
-    def wrapper():
-        print("Что то происходит перед вызовом функции")
-        func()
-        print("Что то происходит после функции")
+def decotator_with_args(func):
+    def wrapper(*args):
+        print(f"Аргументы функции: {args}")
+        result = func(*args)
+        print(f"Результат: {result}")
+        return result
+    return wrapper
 
-    return wrapper()
+@decotator_with_args
+def add(a, b):
+    return a + b
 
-
-@my_decorator
-def Hello():
-    print("Привет!")
-
-
-Hello
+add(2,3)
+add("v", "s")
