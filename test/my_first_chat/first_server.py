@@ -14,4 +14,4 @@ while True:
     for client in clients:
         if client == adress:
             continue
-        sock.sentdo(data, client)
+        sock.sendto(data, client)

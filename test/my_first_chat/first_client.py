@@ -16,7 +16,7 @@ def read_socket():
         data = socket.recv(1024)
         print(data.decode("utf-8"))
 
-thread = threading.Thread(target=read_socket())
+thread = threading.Thread(target=read_socket)
 thread.start()
 
 while True:
